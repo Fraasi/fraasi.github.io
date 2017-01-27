@@ -39,6 +39,11 @@ iframe {
 	height: 350px;
 	box-shadow: 0px 5px 15px 0px black;
 }
+#taxisimg {
+	display: block;
+	width: 300px;
+	margin: 5px auto 0px auto;
+}
 
 /* stylesheet fixes!  */
 
