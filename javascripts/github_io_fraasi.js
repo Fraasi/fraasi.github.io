@@ -8,7 +8,7 @@ fetch(repos).then(function(response) {
     return response.json()
 	.then(function(json) {
 	  json.forEach( obj => {
-		if (obj.name.includes('repo') || obj.name.includes('fraasi')) {
+		if (obj.name.includes('repo') || obj.name.includes('fraasi') || obj.fork) {
 			console.log('skip');
 		} else {
 			var spaced = obj.name.replace(/-/g, ' ');
