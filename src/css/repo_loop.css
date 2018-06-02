@@ -34,24 +34,4 @@
 .dropdown:hover .dropbutton, .dropdown:active .dropbutton {
 	box-shadow: 0px 0px 15px 0px grey;
 }
-iframe {
-	width: 100%;
-	height: 350px;
-	box-shadow: 0px 5px 15px 0px black;
-}
-#taxisimg {
-	display: block;
-	width: 300px;
-	margin: 5px auto 0px auto;
-}
-
-/* stylesheet fixes!  */
-
-.download-bar .inner {
-    overflow: visible !important;
-}
-footer {
-	margin-bottom: 0px !important;
-    padding-bottom: 0px !important;
-}
 
