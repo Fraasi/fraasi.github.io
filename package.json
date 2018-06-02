@@ -24,7 +24,7 @@
 	"bugs": {
 		"url": "https://github.com/Fraasi/fraasi.github.io/issues"
 	},
-	"homepage": "https://github.com/Fraasi/fraasi.github.io",
+	"homepage": "https://github.com/Fraasi/fraasi.github.io/build",
 	"devDependencies": {
 		"gh-pages": "^1.2.0"
 	}
