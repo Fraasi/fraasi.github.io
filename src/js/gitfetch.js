@@ -1,4 +1,4 @@
-export default function () {
+export function fetchRepos() {
 
 	const dropDowns = document.querySelector('.dropdown-content');
 	fetch('https://api.github.com/users/fraasi/repos').then(function (response) {
@@ -11,7 +11,7 @@ export default function () {
 							console.log('skip');
 						} else {
 							const spaced = obj.name.replace(/-/g, ' ');
-							dropDowns.innerHTML += `<a href="${obj.html_url}">${spaced} target="_blank" </a><br>`;
+							dropDowns.innerHTML += `<a target="_blank" href="${obj.html_url}">${spaced}</a><br>`;
 						}
 					});
 					dropDowns.innerHTML += '<a href="https://codepen.io/Fraasi/">@ Codepen</a>';
@@ -21,4 +21,11 @@ export default function () {
 		}
 	})
 
+}
+
+export function fetchPhyllotaxis() {
+	// random between 1 - 72 
+	const rand = Math.floor(Math.random() * 72 ) +1
+	const url = ` https://raw.githubusercontent.com/Fraasi/Phyllotaxis-leaf-arrangement/gh-pages/images/phyllotaxis${rand}.png`
+	return url
 }

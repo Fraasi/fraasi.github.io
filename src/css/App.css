@@ -1,26 +1,47 @@
-/* .App {
-  text-align: center;
-} */
+@font-face {
+	font-family: 'MyWebFont';
+	src: url('../assets/wenzel1.ttf'); /* IE9 Compat Modes */
+  }
+
+.App {
+  /* text-align: center; */
+  display: grid;
+  max-width: 600px;
+  margin: 20px auto;
+  grid-gap: 10px 50px;
+  grid-template-columns: 3fr 12fr 5fr;
+}
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
-  height: 30px;
+  height: 25px;
 }
 
 .App-header {
   background-color: #222;
+  background-image: url('../assets/pattern.png');
   height: 70px;
   padding: 20px;
   color: white;
+  grid-column: 1 / -1;
 }
 
 .App-title {
   font-size: 1.5em;
+  margin: 5px;
+  font-family: 'MyWebFont';
+}
+.App-header > h2 {
+	margin: 0px;
 }
 
-.App-intro {
+.App-body {
   font-size: large;
+  grid-column: 2 / -2;
+  height: 100vh;
+  background-color: #dddd;
 }
+
 
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
