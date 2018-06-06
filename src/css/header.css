@@ -1,0 +1,48 @@
+.header-bar {
+	position: absolute;
+	height: 100px;
+	width: 10px;
+	border: 4px solid grey;
+	background-color: #222;
+	background-image: url('../assets/pattern.png');	
+}
+
+.header-bar.left {
+	top: -15px;
+	left: 20px;
+}
+
+.header-bar.right {
+	top: -15px;
+	right: 20px;
+}
+
+.header-shadow {
+	border: 10px solid black;
+	position: absolute;
+	border-color: #222 transparent transparent;
+	display: block;
+	width: 0px;
+	height: 0px;
+	z-index: -1;
+}
+
+.header-shadow.left.top {
+	left: 4px;
+	transform: rotate(45deg);
+}
+
+.header-shadow.left.bottom {
+	bottom: -14px;
+	left: 5px;
+}
+
+.header-shadow.right.top {
+	left: -14px;
+	transform: rotate(-45deg);
+}
+
+.header-shadow.right.bottom {
+	bottom: -14px;
+	left: -15px;
+}

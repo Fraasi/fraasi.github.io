@@ -1,9 +1,9 @@
 .dropdown {
 	position: relative;
-	/* display: inline-block; */
 	margin-left: 10px;
 	float: right;
 	top: 10px;
+	right: 25px;
 }
 .dropdown *{
 	transition: all 0.25s;
@@ -17,12 +17,14 @@
 .dropdown-content {
 	display: none;
 	position: absolute;
-	padding: 5px;
+	left: -65px;
+	padding: 15px;
 	min-width: 190px;
 	box-shadow: 0px 5px 15px 1px black;
 	color: white;
 	background-color: #222;
 	background-image: url('../assets/pattern.png');
+	z-index: 5;
 }
 
 .dropdown-content > a {
@@ -40,6 +42,6 @@
 	display: block;
 }
 .dropdown:hover .dropbutton, .dropdown:active .dropbutton {
-	box-shadow: 0px 0px 15px 0px grey;
+	box-shadow: 0px 0px 10px 0px grey;
 }
 
