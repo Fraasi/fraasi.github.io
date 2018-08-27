@@ -14,7 +14,8 @@
 		"build": "react-scripts build",
 		"test": "react-scripts test --env=jsdom",
 		"eject": "react-scripts eject",
-		"deploy": "set NODE_DEBUG=gh-pages && node deploy-gh-pages.js",
+		"predeploy": "set NODE_DEBUG=gh-pages",
+		"deploy": "node deploy-gh-pages.js",
 		"clean": "node node_modules/gh-pages/bin/gh-pages-clean"
 	},
 	"repository": {
