@@ -1,10 +1,4 @@
-function click(e) {
-  console.log('click', e);
-}
-
 export function fetchRepos() {
-  console.log('this', this)
-  const dropDownDiv = document.querySelector('.dropdown-content')
   fetch('https://api.github.com/users/fraasi/repos')
     .then((response) => {
       if (!response.ok) {
@@ -13,21 +7,16 @@ export function fetchRepos() {
       return response.json()
     })
     .then((json) => {
-      json.sort((a, b) => new Date(a.created_at) - new Date(b.created_at))
-      console.log('repos', json)
-      json.forEach((obj) => {
-        if (!obj.name.includes('repo') || !obj.name.includes('fraasi') || !obj.fork) {
-          const spaced = obj.name.replace(/-/g, ' ')
-          dropDownDiv.innerHTML += `<a target="_blank" href="${obj.html_url}">${spaced}</a><br>`
-        }
-      })
-      dropDownDiv.innerHTML += '<a href="https://codepen.io/Fraasi/">@ Codepen</a>'
+      const repos = json.filter(repo => (!repo.name.includes('repo') || !repo.name.includes('fraasi') || !repo.fork))
+      repos.sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
+      console.log('repos', repos)
       this.setState({
-        repos: json,
+        repos,
       })
     })
     .catch((error) => {
       console.log(error)
+      const dropDownDiv = document.querySelector('.dropdown-content')
       dropDownDiv.innerHTML = `${error.message}<br/>Try reloading page`
     })
 }

@@ -6,6 +6,7 @@ import '../css/utils.css'
 import '../css/header.css'
 import { fetchRepos, getPhyllotaxisUrl, fetchQuote } from '../js/utils'
 import getDAUrl from '../js/da';
+import RightSide from './right-side'
 
 
 class App extends Component {
@@ -14,7 +15,14 @@ class App extends Component {
     this.state = {
       phyllotaxisImgUrl: '',
       deviantImgUrl: '',
-      repos: {},
+      repos: [],
+      currentRepo: {
+        readme: '',
+        created_at: '',
+        title: '',
+        updated_at: '',
+        html_url: '',
+      },
       dailyQuote: {
         quote: 'Tax his tobacco, Tax his drink, Tax him if he Tries to think. Tax his cigars, Tax his beers, If he cries Tax his tears. ',
         author: 'Charlie Reese',
@@ -23,14 +31,6 @@ class App extends Component {
   }
 
   componentDidMount() {
-    // const loader = document.querySelector('.jsloader')
-    // // var int =
-    // setInterval(() => {
-    //   // eslint-disable-next-line
-    //   if ((loader.innerHTML += '.').length == 4) loader.innerHTML = ''
-    //   // clearInterval( int ); // at some point, clear the setInterval
-    // }, 700)
-
     fetchRepos.call(this)
     // fetchQuote.call(this)
 
@@ -40,16 +40,58 @@ class App extends Component {
     })
   }
 
+  handleAClick = (e) => {
+    const repoName = e.target.dataset.name
+    fetch(`https://raw.githubusercontent.com/Fraasi/${repoName}/master/README.md`)
+      .then(resp => {
+        if (!resp.ok) throw Error()
+        return resp.text()
+      })
+      .then(readme => {
+        const repo = this.state.repos.find(repo => repo.name === repoName)
+        this.setState({
+          currentRepo: {
+            readme,
+            title: repoName.replace(/-/g, ' '),
+            updated_at: repo.updated_at,
+            created_at: repo.created_at,
+            html_url: repo.html_url
+          }
+        })
+      })
+      .catch(err => {
+        this.setState({
+          currentRepo: {
+            title: err
+          }
+        })
+      })
+  }
 
   render() {
-    const { phyllotaxisImgUrl, deviantImgUrl, dailyQuote } = this.state
+    const {
+      phyllotaxisImgUrl, deviantImgUrl, dailyQuote, repos, currentRepo
+    } = this.state
     return (
       <div className="App">
         <header className="header">
           <img src={codePNG} className="code-logo" alt="code-logo" />
           <div className="dropdown">
             <button type="button" className="dropbutton">Repositories</button>
-            <div className="dropdown-content" />
+            <div className="dropdown-content">
+              {repos.map((repo) => {
+                const spaced = repo.name.replace(/-/g, ' ')
+                return (
+                  <React.Fragment key={repo.id}>
+                    <div data-name={repo.name} onClick={this.handleAClick}>{spaced}</div>
+                    <br />
+                  </React.Fragment>
+                )
+              })}
+              <a href="https://codepen.io/Fraasi/">@ Codepen</a>
+              <br />
+              <a href="https://www.deviantart.com/doofassi/gallery/">@ Deviantart</a>
+            </div>
           </div>
           <h1 className="title">
             <a href="/">Fra A.S I</a>
@@ -91,13 +133,7 @@ class App extends Component {
             </h3>
           </div>
 
-          <div className="body-right">
-            <a rel="noopener noreferrer" title="PhylloTaxis" href="https://fraasi.github.io/Phyllotaxis-leaf-arrangement/PhylloTaxis.html" target="_blank">
-              {' '}
-              <img src={phyllotaxisImgUrl} alt="phyllotaxis" className="phyllotaxis-image" />
-              {' '}
-            </a>
-          </div>
+              <RightSide currentRepo={currentRepo} />
 
         </section>
       </div>
