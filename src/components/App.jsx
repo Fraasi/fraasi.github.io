@@ -42,17 +42,21 @@ class App extends Component {
 
   handleAClick = (e) => {
     const repoName = e.target.dataset.name
-    fetch(`https://raw.githubusercontent.com/Fraasi/${repoName}/master/README.md`)
+    console.log('repoName', repoName);
+    const branch = repoName === 'fraasi.github.io' ? 'source' : 'master'
+    fetch(`https://raw.githubusercontent.com/Fraasi/${repoName}/${branch}/README.md`)
       .then(resp => {
         if (!resp.ok) throw Error()
         return resp.text()
       })
       .then(readme => {
         const repo = this.state.repos.find(repo => repo.name === repoName)
+        console.log('repo.name', repo.name);
+
         this.setState({
           currentRepo: {
             readme,
-            title: repoName.replace(/-/g, ' '),
+            title: repo.name.replace(/-/g, ' '),
             updated_at: repo.updated_at,
             created_at: repo.created_at,
             html_url: repo.html_url
@@ -62,7 +66,7 @@ class App extends Component {
       .catch(err => {
         this.setState({
           currentRepo: {
-            title: err
+            title: err.message
           }
         })
       })
