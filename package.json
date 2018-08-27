@@ -3,9 +3,10 @@
 	"version": "0.1.0",
 	"private": true,
 	"dependencies": {
-		"react": "^16.4.0",
+		"react": "^16.4.2",
 		"react-dom": "^16.4.0",
-		"react-scripts": "1.1.4"
+		"react-router-dom": "^4.3.1",
+		"react-scripts": "^1.1.5"
 	},
 	"scripts": {
 		"start": "react-scripts start",
@@ -25,6 +26,11 @@
 	},
 	"homepage": "https://fraasi.github.io/",
 	"devDependencies": {
+		"eslint": "^5.4.0",
+		"eslint-config-airbnb": "^17.1.0",
+		"eslint-plugin-import": "^2.14.0",
+		"eslint-plugin-jsx-a11y": "^6.1.1",
+		"eslint-plugin-react": "^7.11.1",
 		"gh-pages": "^1.2.0"
 	}
 }

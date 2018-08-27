@@ -1,49 +1,56 @@
 @font-face {
 	font-family: 'MyWebFont';
-	src: url('../assets/wenzel1.ttf'); /* IE9 Compat Modes */
-  }
-
-.App {
-  display: grid;
-  max-width: 700px;
-  margin: 20px auto;
-  grid-gap: 10px 20px;
-  grid-template-columns: 50px 1fr 50px;
-  /* grid-template-rows: repeat(auto-fill, minmax(100px, 1fr)); */
-  /* grid-auto-flow: column; */
-  /* grid-template-rows: auto 1fr auto; */
+	src: url('../assets/wenzel1.ttf');
 }
 
-.logo {
-  position: relative;
-  animation: logo-spin infinite 20s linear;
-  height: 20px;
-  margin-right: 10px;
-  top: 10px;
-  left: 25px;
-  float: left;
+.App {
+	display: grid;
+	max-width: 700px;
+	margin: 20px auto;
+	grid-gap: 10px 20px;
+	grid-template-columns: 50px 1fr 50px;
+}
+
+.code-logo {
+	position: relative;
+	animation: logo-spin infinite 20s linear;
+	height: 20px;
+	margin-right: 10px;
+	top: 10px;
+	left: 25px;
+	float: left;
 }
 
 .header {
 	position: relative;
-  background-color: #222;
-  background-image: url('../assets/pattern.png');
-  height: 40px;
-  padding: 20px;
-  color: white;
-  grid-column: 1 / -1;
-  border: 4px solid grey;
+	background-color: #222;
+	background-image: url('../assets/pattern.png');
+	height: 40px;
+	padding: 20px;
+	color: white;
+	grid-column: 1 / -1;
+	border: 4px solid grey;
 }
 
 .title {
-  font-size: 1.5em;
-  text-align: center;
-  margin: 5px;
-  font-family: 'MyWebFont';
+	font-size: 1.5em;
+	text-align: center;
+	margin: 5px;
+	font-family: 'MyWebFont';
 }
-.header > h2 {
+.title > a {
+	color: white;
+	text-decoration: none;
+}
+.title > a:visited {
+	color: white;
+	text-decoration: none;
+}
+
+.header>h2 {
 	margin: 0px;
-} 
+}
+
 .body {
 	grid-column: 2 / -2;
 	display: grid;
@@ -52,15 +59,15 @@
 	grid-gap: 10px;
 	border: 2px solid crimson;
 	background-color: #dddd;
-	
 }
 
 .body-right {
-  font-size: large;
-  grid-column: span 1 / -1;
-  grid-row: 1 / span 2;
-  border: 2px solid burlywood;
+	font-size: large;
+	grid-column: span 1 / -1;
+	grid-row: 1 / span 2;
+	border: 2px solid burlywood;
 }
+
 .body-left {
 	grid-column: 1 / span 1;
 	height: max-content;
@@ -69,13 +76,16 @@
 	text-align: center;
 }
 
-.phyllotaxis-image {
+.left-image {
 	height: 100%;
 	width: 100%;
 }
 
-
 @keyframes logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
 }

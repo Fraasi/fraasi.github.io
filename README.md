@@ -4,4 +4,5 @@ Source code for master branch.
 
 Complete rewrite in progress...
 
-* 
+* [ ] react spring
+* [ ] css background texture
