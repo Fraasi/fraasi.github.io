@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
-import { HashRouter } from 'react-router-dom'
-import codePNG from '../assets/code.png'
+// import { HashRouter } from 'react-router-dom'
 import '../css/App.css'
-import '../css/utils.css'
-import '../css/header.css'
-import { fetchRepos, getPhyllotaxisUrl, fetchQuote } from '../js/utils'
+import '../css/dropdown.css'
+
+import { fetchRepos, getPhyllotaxisUrl } from '../js/utils'
 import getDAUrl from '../js/da';
-import RightSide from './right-side'
+import Readme from './Readme'
+import Header from './Header';
 
 
 class App extends Component {
@@ -19,9 +19,11 @@ class App extends Component {
       currentRepo: {
         readme: '',
         created_at: '',
+        name: '',
         title: '',
         updated_at: '',
         html_url: '',
+        branch: '',
       },
       dailyQuote: {
         quote: 'Tax his tobacco, Tax his drink, Tax him if he Tries to think. Tax his cigars, Tax his beers, If he cries Tax his tears. ',
@@ -40,92 +42,60 @@ class App extends Component {
     })
   }
 
-  handleAClick = (e) => {
+  handleRepoClick = (e) => {
     const repoName = e.target.dataset.name
-    console.log('repoName', repoName);
-    const branch = repoName === 'fraasi.github.io' ? 'source' : 'master'
+    const repo = this.state.repos.find(repo => repo.name === repoName)
+    const branch = repo.default_branch
     fetch(`https://raw.githubusercontent.com/Fraasi/${repoName}/${branch}/README.md`)
-      .then(resp => {
+      .then((resp) => {
         if (!resp.ok) throw Error()
         return resp.text()
       })
-      .then(readme => {
-        const repo = this.state.repos.find(repo => repo.name === repoName)
-        console.log('repo.name', repo.name);
-
+      .then((readme) => {
         this.setState({
           currentRepo: {
             readme,
+            name: repo.name,
             title: repo.name.replace(/-/g, ' '),
             updated_at: repo.updated_at,
             created_at: repo.created_at,
-            html_url: repo.html_url
-          }
+            html_url: repo.html_url,
+            branch
+          },
         })
       })
-      .catch(err => {
+      .catch((err) => {
         this.setState({
           currentRepo: {
-            title: err.message
-          }
+            title: err.message,
+          },
         })
       })
   }
 
   render() {
     const {
-      phyllotaxisImgUrl, deviantImgUrl, dailyQuote, repos, currentRepo
+      phyllotaxisImgUrl, deviantImgUrl, dailyQuote, repos, currentRepo,
     } = this.state
+    console.log('repos app', repos);
     return (
       <div className="App">
-        <header className="header">
-          <img src={codePNG} className="code-logo" alt="code-logo" />
-          <div className="dropdown">
-            <button type="button" className="dropbutton">Repositories</button>
-            <div className="dropdown-content">
-              {repos.map((repo) => {
-                const spaced = repo.name.replace(/-/g, ' ')
-                return (
-                  <React.Fragment key={repo.id}>
-                    <div data-name={repo.name} onClick={this.handleAClick}>{spaced}</div>
-                    <br />
-                  </React.Fragment>
-                )
-              })}
-              <a href="https://codepen.io/Fraasi/">@ Codepen</a>
-              <br />
-              <a href="https://www.deviantart.com/doofassi/gallery/">@ Deviantart</a>
-            </div>
-          </div>
-          <h1 className="title">
-            <a href="/">Fra A.S I</a>
-          </h1>
-
-          <div className="header-bar left">
-            <span className="header-shadow left top" />
-            <span className="header-shadow left bottom" />
-          </div>
-          <div className="header-bar right">
-            <span className="header-shadow right top" />
-            <span className="header-shadow right bottom" />
-          </div>
-        </header>
+        <Header repos={repos} handleRepoClick={handleRepoClick} />
 
         <section className="body">
+        <Readme currentRepo={currentRepo} />
 
           <div className="body-left">
             {dailyQuote.quote}
             <br />
-            -
-            {' '}
-            {dailyQuote.author}
+            - {dailyQuote.author}
           </div>
-          <div>
+          <div className="body-left">
             <a rel="noopener noreferrer" title="PhylloTaxis" href="https://fraasi.github.io/Phyllotaxis-leaf-arrangement/PhylloTaxis.html" target="_blank">
               <img src={phyllotaxisImgUrl} alt="phyllotaxis" className="left-image" />
             </a>
           </div>
-          <div>
+          <div className="body-left">
             <a rel="noopener noreferrer" title="Deviant art pic" href="https://www.deviantart.com/doofassi/gallery/" target="_blank">
               <img src={deviantImgUrl} alt="Deviant art pic" className="left-image" />
             </a>
@@ -137,7 +107,6 @@ class App extends Component {
             </h3>
           </div>
 
-              <RightSide currentRepo={currentRepo} />
 
         </section>
       </div>
