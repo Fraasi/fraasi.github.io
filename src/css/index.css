@@ -1,4 +1,9 @@
+html {
+  min-height: 100%;
+}
+
 body {
+  min-height: 100%;
   margin: 0;
   padding: 0;
   background-image:  url('../assets/black-linen.png'), linear-gradient(to right top, #1e1629, #301f41, #462859, #5f2f72, #7a3589);
