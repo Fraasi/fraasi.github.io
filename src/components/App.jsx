@@ -7,6 +7,7 @@ import { fetchRepos, getPhyllotaxisUrl } from '../js/utils'
 import getDAUrl from '../js/da';
 import Readme from './Readme'
 import Header from './Header';
+import LeftSide from './left-side';
 
 
 class App extends Component {
@@ -74,40 +75,13 @@ class App extends Component {
   }
 
   render() {
-    const {
-      phyllotaxisImgUrl, deviantImgUrl, dailyQuote, repos, currentRepo,
-    } = this.state
-    console.log('repos app', repos);
+    const { phyllotaxisImgUrl, deviantImgUrl, dailyQuote, repos, currentRepo } = this.state
     return (
       <div className="App">
-        <Header repos={repos} handleRepoClick={handleRepoClick} />
-
+        <Header repos={repos} handleRepoClick={this.handleRepoClick} />
         <section className="body">
+        <LeftSide deviantImgUrl={deviantImgUrl} phyllotaxisImgUrl={phyllotaxisImgUrl} dailyQuote={dailyQuote}/>
         <Readme currentRepo={currentRepo} />
-
-          <div className="body-left">
-            {dailyQuote.quote}
-            <br />
-            - {dailyQuote.author}
-          </div>
-          <div className="body-left">
-            <a rel="noopener noreferrer" title="PhylloTaxis" href="https://fraasi.github.io/Phyllotaxis-leaf-arrangement/PhylloTaxis.html" target="_blank">
-              <img src={phyllotaxisImgUrl} alt="phyllotaxis" className="left-image" />
-            </a>
-          </div>
-          <div className="body-left">
-            <a rel="noopener noreferrer" title="Deviant art pic" href="https://www.deviantart.com/doofassi/gallery/" target="_blank">
-              <img src={deviantImgUrl} alt="Deviant art pic" className="left-image" />
-            </a>
-          </div>
-          <div className="body-left">
-            <h3>
-              Complete rewrite in progress
-              <span className="jsloader" />
-            </h3>
-          </div>
-
-
         </section>
       </div>
     );

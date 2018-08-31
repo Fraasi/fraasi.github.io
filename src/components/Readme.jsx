@@ -20,13 +20,13 @@ export default function Readme(props) {
   return (
     <div className="body-right">
       <h3>
-        {currentRepo.title}
+        <a rel="noopener noreferrer" href={currentRepo.html_url} target="_blank">{currentRepo.title}</a>
       </h3>
-      {`Created: ${currentRepo.created_at}`}
+      {`Created:\u00A0\u00A0${currentRepo.created_at}`}
       <br />
       {`Updated: ${currentRepo.updated_at}`}
       <br />
-      <a rel="noopener noreferrer" href={currentRepo.html_url} target="_blank">Repository Url</a>
+      <br />
       <br />
       (README.md)
       <div

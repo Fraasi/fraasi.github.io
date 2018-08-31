@@ -1,0 +1,18 @@
+.left-side {
+	grid-column: 1 / span 1;
+	height: max-content;
+	padding: 5px;
+	text-align: center;
+	border-right: 2px solid black;
+}
+
+.left-image {
+	height: 100%;
+	width: 100%;
+	margin-top: 5px;
+}
+
+.left-side > a:any-link {
+	text-decoration: none;
+	color: #000;
+}

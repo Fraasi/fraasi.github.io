@@ -8,4 +8,4 @@ Complete rewrite in progress...
 * [ ] react spring
 * [ ] css background texture
 * [ ] font
-* [ ] md images linkfix
+* [x] md images linkfix

@@ -9,7 +9,6 @@ export function fetchRepos() {
     .then((json) => {
       const repos = json.filter(repo => (!repo.name.includes('repo') || !repo.name.includes('fraasi') || !repo.fork))
       repos.sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
-      console.log('repos', repos)
       this.setState({
         repos,
       })

@@ -4,10 +4,7 @@ import codePNG from '../assets/code.png'
 import '../css/header.css'
 
 export default function Header(props) {
-  console.log('props', props);
   const { repos, handleRepoClick } = props
-  console.log('repos', repos);
-
   return (
     <header className="header">
       <img src={codePNG} className="code-logo" alt="code-logo" />
