@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import '../css/App.css'
 import '../css/dropdown.css'
 
-import { fetchRepos, getPhyllotaxisUrl } from '../js/utils'
+import { fetchRepos, getPhyllotaxisUrl, fetchQuote } from '../js/utils'
 import getDAUrl from '../js/da';
 import Readme from './Readme'
 import Header from './Header';
@@ -26,16 +26,13 @@ class App extends Component {
         html_url: '',
         branch: '',
       },
-      dailyQuote: {
-        quote: 'Tax his tobacco, Tax his drink, Tax him if he Tries to think. Tax his cigars, Tax his beers, If he cries Tax his tears. ',
-        author: 'Charlie Reese',
-      },
+      dailyQuote: { author: '', quote: '',},
     }
   }
 
   componentDidMount() {
     fetchRepos.call(this)
-    // fetchQuote.call(this)
+    fetchQuote.call(this)
 
     this.setState({
       phyllotaxisImgUrl: getPhyllotaxisUrl(),

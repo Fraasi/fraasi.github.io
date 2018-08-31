@@ -28,9 +28,21 @@ export function getPhyllotaxisUrl() {
 
 export function fetchQuote() {
   // if (this.state.dailyQuote.quote) return
+  function timeoutQuote() {
+    this.setState({
+      dailyQuote: {
+        quote: 'Tax his tobacco, Tax his drink, Tax him if he Tries to think. Tax his cigars, Tax his beers, If he cries Tax his tears. ',
+        author: 'Charlie Reese',
+      },
+    })
+  }
+
   fetch('https://cors-anywhere.herokuapp.com/https://ms-rq-api.herokuapp.com/')
     .then((data) => {
-      if (data.status !== 200) return data
+      if (data.status !== 200) {
+        setTimeout(timeoutQuote.bind(this), 60000)
+        return data
+      }
       return data.json()
     })
     .then((json) => {
@@ -41,5 +53,15 @@ export function fetchQuote() {
           author: json.status || author,
         },
       })
+    })
+    .catch((err) => {
+      console.log('err', err);
+      this.setState({
+        dailyQuote: {
+          quote: `${err}`,
+          author: 'ms-rq-api',
+        },
+      })
+      setTimeout(timeoutQuote.bind(this), 60000)
     })
 }
