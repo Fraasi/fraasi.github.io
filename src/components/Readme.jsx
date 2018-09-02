@@ -1,5 +1,6 @@
 import React from 'react'
 import showdown from 'showdown'
+import CV from './CV'
 import '../css/readme.css'
 
 showdown.setFlavor('github')
@@ -7,13 +8,7 @@ const converter = new showdown.Converter()
 
 export default function Readme(props) {
   const { currentRepo } = props
-  if (currentRepo.readme === '') {
-    return (
-      <div className="body-right">
-       Choose a repository from the dropdown menu
-      </div>
-    )
-  }
+  if (currentRepo.readme === '') return (<CV />)
 
   const string = currentRepo.readme.replace(/\(([\w\/-]+(.jpg|.png))\)/g, (match, $1) => `(https://raw.githubusercontent.com/Fraasi/${currentRepo.name}/${currentRepo.branch}/${$1})`)
 

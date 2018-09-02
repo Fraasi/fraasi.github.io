@@ -1,0 +1,5 @@
+.body-right p li {
+	list-style-type: none;
+	margin-left: 15px;
+}
+/* #root > div > section > div.body-right > p:nth-child(4) > li:nth-child(3) */

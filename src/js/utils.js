@@ -7,7 +7,7 @@ export function fetchRepos() {
       return response.json()
     })
     .then((json) => {
-      const repos = json.filter(repo => (!repo.name.includes('repo') || !repo.name.includes('fraasi') || !repo.fork))
+      const repos = json.filter(repo => (!repo.name.includes('repo') && !repo.fork))
       repos.sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
       this.setState({
         repos,
@@ -27,7 +27,6 @@ export function getPhyllotaxisUrl() {
 }
 
 export function fetchQuote() {
-  // if (this.state.dailyQuote.quote) return
   function timeoutQuote() {
     this.setState({
       dailyQuote: {

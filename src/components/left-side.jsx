@@ -5,9 +5,10 @@ export default function LeftSide(props) {
   const { dailyQuote, deviantImgUrl, phyllotaxisImgUrl } = props
   return (
     <div className="left-side">
-      <a href="https://fraasi.github.io/Random-quote-machine/" rel="noopener noreferrer" title="Random quote" target="_blank">
-        {dailyQuote.quote}
+      <a href="https://fraasi.github.io/Random-quote-machine/" rel="noopener noreferrer" title="Random quote api" target="_blank">
+        <b>Random quote api</b><br />
       </a>
+      {dailyQuote.quote}
       <br />
       - {dailyQuote.author}
       <div className="left">

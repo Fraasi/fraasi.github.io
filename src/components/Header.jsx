@@ -1,6 +1,6 @@
 
 import React from 'react'
-import codePNG from '../assets/code.png'
+import codePNG from '../assets/code.svg'
 import '../css/header.css'
 
 export default function Header(props) {
@@ -19,6 +19,8 @@ export default function Header(props) {
               )
             })}
           </ul>
+          <a href="https://github.com/Fraasi/">@ Github</a>
+          <br />
           <a href="https://codepen.io/Fraasi/">@ Codepen</a>
           <br />
           <a href="https://www.deviantart.com/doofassi/gallery/">@ Deviantart</a>

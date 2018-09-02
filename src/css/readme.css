@@ -1,5 +1,5 @@
 .body-right img {
-	width: 100%;
+	max-width: 100%;
 	padding-right: -5px;
 }
 
