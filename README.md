@@ -8,9 +8,9 @@ Complete rewrite in progress...
 * [ ] react spring maybe
 * [x] css background texture
 * [ ] font
-* [x] md images linkfix
+* [x] md images link fix
 * [ ] header background color change
 * [x] text
-* [ ] shadows for header bars
+* [x] shadows for header bars
 * [ ] left side loaders
 

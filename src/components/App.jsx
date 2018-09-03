@@ -71,14 +71,22 @@ class App extends Component {
       })
   }
 
+  titleClick = () => {
+    this.setState({
+      currentRepo: {
+        readme: ''
+      }
+    })
+  }
+
   render() {
     const { phyllotaxisImgUrl, deviantImgUrl, dailyQuote, repos, currentRepo } = this.state
     return (
       <div className="App">
-        <Header repos={repos} handleRepoClick={this.handleRepoClick} />
+        <Header repos={repos} handleRepoClick={this.handleRepoClick} titleClick={this.titleClick} />
         <section className="body">
-        <LeftSide deviantImgUrl={deviantImgUrl} phyllotaxisImgUrl={phyllotaxisImgUrl} dailyQuote={dailyQuote}/>
-        <Readme currentRepo={currentRepo} />
+          <LeftSide deviantImgUrl={deviantImgUrl} phyllotaxisImgUrl={phyllotaxisImgUrl} dailyQuote={dailyQuote}/>
+          <Readme currentRepo={currentRepo} />
         </section>
       </div>
     );

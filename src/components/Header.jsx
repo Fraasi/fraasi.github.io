@@ -4,7 +4,7 @@ import codePNG from '../assets/code.svg'
 import '../css/header.css'
 
 export default function Header(props) {
-  const { repos, handleRepoClick } = props
+  const { repos, handleRepoClick, titleClick } = props
   return (
     <header className="header">
       <img src={codePNG} className="code-logo" alt="code-logo" />
@@ -26,8 +26,8 @@ export default function Header(props) {
           <a href="https://www.deviantart.com/doofassi/gallery/">@ Deviantart</a>
         </div>
       </div>
-      <h1 className="title">
-        <a href="/">Fra A.S I</a>
+      <h1 className="title" onClick={titleClick}>
+        Fra A.S I
       </h1>
 
       <div className="header-bar left">
