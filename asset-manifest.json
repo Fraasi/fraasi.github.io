@@ -1,9 +1,10 @@
 {
-  "main.css": "static/css/main.e0907bb3.css",
-  "main.css.map": "static/css/main.e0907bb3.css.map",
-  "main.js": "static/js/main.6df41777.js",
-  "main.js.map": "static/js/main.6df41777.js.map",
+  "main.css": "static/css/main.380e061b.css",
+  "main.css.map": "static/css/main.380e061b.css.map",
+  "main.js": "static/js/main.86da4c95.js",
+  "main.js.map": "static/js/main.86da4c95.js.map",
   "static\\media\\black-linen.png": "static/media/black-linen.d01731ee.png",
   "static\\media\\code.svg": "static/media/code.23a2f1cd.svg",
+  "static\\media\\spinner.svg": "static/media/spinner.d059232c.svg",
   "static\\media\\wenzel1.ttf": "static/media/wenzel1.7fb66dd0.ttf"
 }
