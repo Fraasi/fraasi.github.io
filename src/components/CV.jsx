@@ -11,7 +11,7 @@ export default function CV() {
   return (
     <div className="body-right">
       <h3>About Fra A.S I</h3>
-      <p>I am a hobbyist coder who dived too deep into javascript
+      <p>I am a hobbyist coder who dove too deep into javascript
         and built this little portfolio site
         in hopes of maybe landing a job in the industry one day.<br />
         Motto: If you can&apos;t learn it yourself, no school can help you.

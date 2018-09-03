@@ -2,13 +2,15 @@ import React from 'react'
 import showdown from 'showdown'
 import CV from './CV'
 import '../css/readme.css'
+import spinner from '../assets/spinner.svg'
 
 showdown.setFlavor('github')
 const converter = new showdown.Converter()
 
 export default function Readme(props) {
-  const { currentRepo } = props
-  if (currentRepo.readme === '') return (<CV />)
+  const { currentRepo, loading } = props
+  if (currentRepo.readme === '' && !loading) return (<CV />)
+  if (loading) return <img src={spinner} className="spinner" alt="spinner" />
 
   const string = currentRepo.readme.replace(/\(([\w\/-]+(.jpg|.png))\)/g, (match, $1) => `(https://raw.githubusercontent.com/Fraasi/${currentRepo.name}/${currentRepo.branch}/${$1})`)
 
@@ -23,7 +25,7 @@ export default function Readme(props) {
       <br />
       <br />
       <br />
-      (README.md)
+      <div className="center">&darr;(README.md)&darr;</div>
       <div
         className="markdown"
         dangerouslySetInnerHTML={{ __html: converter.makeHtml(string) }}

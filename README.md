@@ -12,5 +12,5 @@ Complete rewrite in progress...
 * [ ] header background color change
 * [x] text
 * [x] shadows for header bars
-* [ ] left side loaders
+* [x] left side loaders
 

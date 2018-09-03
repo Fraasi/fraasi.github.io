@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-// import { HashRouter } from 'react-router-dom'
 import '../css/App.css'
 import '../css/dropdown.css'
 
@@ -14,6 +13,7 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
+      loading: false,
       phyllotaxisImgUrl: '',
       deviantImgUrl: '',
       repos: [],
@@ -31,62 +31,72 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetchRepos.call(this)
-    fetchQuote.call(this)
-
-    this.setState({
-      phyllotaxisImgUrl: getPhyllotaxisUrl(),
-      deviantImgUrl: getDAUrl(),
-    })
+      fetchRepos.call(this)
+      fetchQuote.call(this)
+      this.setState({
+        phyllotaxisImgUrl: getPhyllotaxisUrl(),
+        deviantImgUrl: getDAUrl(),
+      })
   }
 
   handleRepoClick = (e) => {
     const repoName = e.target.dataset.name
-    const repo = this.state.repos.find(repo => repo.name === repoName)
-    const branch = repo.default_branch
-    fetch(`https://raw.githubusercontent.com/Fraasi/${repoName}/${branch}/README.md`)
-      .then((resp) => {
-        if (!resp.ok) throw Error()
-        return resp.text()
-      })
-      .then((readme) => {
-        this.setState({
-          currentRepo: {
-            readme,
-            name: repo.name,
-            title: repo.name.replace(/-/g, ' '),
-            updated_at: repo.updated_at,
-            created_at: repo.created_at,
-            html_url: repo.html_url,
-            branch
-          },
+    this.setState(
+      {
+        loading: true,
+        currentRepo: {
+          readme: ''
+        }
+      }, () => {
+        const repo = this.state.repos.find(repo => repo.name === repoName)
+        const branch = repo.default_branch
+        fetch(`https://raw.githubusercontent.com/Fraasi/${repoName}/${branch}/README.md`)
+        .then((resp) => {
+          if (!resp.ok) throw Error()
+          return resp.text()
         })
-      })
-      .catch((err) => {
-        this.setState({
-          currentRepo: {
-            title: err.message,
-          },
+        .then((readme) => {
+          this.setState({
+            loading: false,
+            currentRepo: {
+              readme,
+              name: repo.name,
+              title: repo.name.replace(/-/g, ' '),
+              updated_at: repo.updated_at,
+              created_at: repo.created_at,
+              html_url: repo.html_url,
+              branch
+            },
+          })
         })
-      })
+        .catch((err) => {
+          this.setState({
+            currentRepo: {
+              title: err.message,
+            },
+          })
+        })
+      }
+    )
   }
 
   titleClick = () => {
     this.setState({
       currentRepo: {
-        readme: ''
+        readme: '',
+        loading: false
       }
     })
   }
 
   render() {
-    const { phyllotaxisImgUrl, deviantImgUrl, dailyQuote, repos, currentRepo } = this.state
+    const { phyllotaxisImgUrl, deviantImgUrl, dailyQuote, repos, currentRepo, loading } = this.state
     return (
       <div className="App">
         <Header repos={repos} handleRepoClick={this.handleRepoClick} titleClick={this.titleClick} />
         <section className="body">
           <LeftSide deviantImgUrl={deviantImgUrl} phyllotaxisImgUrl={phyllotaxisImgUrl} dailyQuote={dailyQuote}/>
-          <Readme currentRepo={currentRepo} />
+          <Readme currentRepo={currentRepo} loading={loading}/>
         </section>
       </div>
     );
