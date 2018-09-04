@@ -1,14 +1,26 @@
+/* @import url('https://fonts.googleapis.com/css?family=Libre+Baskerville'); */
+@font-face {
+	font-family: 'Bookman';
+	src: url(../assets/BOOKOS.TTF);
+}
+
 .body-right img {
 	max-width: 100%;
 	padding-right: -5px;
 }
 
 .body-right {
-	font-size: large;
+	font-size: 16px;
 	grid-column: span 1 / -1;
 	grid-row: 1 / span 2;
 	padding-right: 5px;
 	overflow: auto;
+	font-family: 'Georgia', serif;
+	/* font-family: 'Libre Baskerville', serif; */
+}
+
+.body-right h3, .body-right h2, .body-right p > b {
+	font-family: 'Bookman', serif;
 }
 
 .center {

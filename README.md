@@ -2,15 +2,12 @@
 
 Source code for master branch website.
 
-Complete rewrite in progress...
-
 ### Todo
 * [ ] react spring maybe
 * [x] css background texture
-* [ ] font
+* [x] fonts
 * [x] md images link fix
-* [ ] header background color change
+* [ ] header background color change?
 * [x] text
 * [x] shadows for header bars
-* [x] left side loaders
-
+* [x] loaders

@@ -24,11 +24,13 @@ export default function CV() {
         <b>Main skills</b><br />
         {skills.main.map(skill => (<li key={skill}>{skill}</li>))}<br />
 
-        <b>Some libraries I&apos;ve used along the way</b><br />
+        <b className="b">Some libraries I&apos;ve used along the way</b><br />
         {skills.libraries.map(lib => (<li key={lib}>{lib}</li>))}<br />
 
         <b>Other related technologies</b><br />
         {skills.other.map(other => (<li key={other}>{other}</li>))}
+
+        <b>Quick links to ? projects</b>
       </p>
 
     </div>
