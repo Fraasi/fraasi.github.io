@@ -2,9 +2,9 @@ import React from 'react';
 import '../css/cv.css'
 
 const skills = {
-  main: ['Javascript (es5 & es6)', 'React', 'Node.js', 'Electron', 'html & css'],
+  main: ['Javascript', 'React', 'Node', 'Electron', 'HTML5', 'CSS3'],
   libraries: ['Leaflet.js', 'p5.js', 'd3.js', 'Markdown.js', 'fullcalendar.js', 'node-osmosis', 'node-commander', 'node-express', 'node-mongodb'],
-  other: ['npm', 'git & github', 'Photoshop'],
+  other: ['npm', 'git & github', 'Heroku', 'Photoshop'],
 }
 
 export default function CV() {
