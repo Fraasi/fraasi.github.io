@@ -11,3 +11,8 @@ Source code for master branch website.
 * [x] text
 * [x] shadows for header bars
 * [x] loaders
+* [ ] footer, similar to header?
+
+
+	
+	

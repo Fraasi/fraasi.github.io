@@ -9,10 +9,12 @@ export default function LeftSide(props) {
       <a href="https://fraasi.github.io/Random-quote-machine/" rel="noopener noreferrer" title="Random quote api" target="_blank">
         <b>Random quote api</b><br />
       </a>
-      {dailyQuote.quote.length === 0 && <img src={spinner} className="spinner" alt="spinner" />}
-      {dailyQuote.quote}
-      <br />
-      - {dailyQuote.author}
+      <div className="left quote">
+        {dailyQuote.quote.length === 0 && <img src={spinner} className="spinner" alt="spinner" />}
+        {dailyQuote.quote}
+        <br />
+        - {dailyQuote.author}
+      </div>
       <div className="left">
         <a rel="noopener noreferrer" title="PhylloTaxis" href="https://fraasi.github.io/Phyllotaxis-leaf-arrangement/PhylloTaxis.html" target="_blank">
           {phyllotaxisImgUrl.length === 0 && <img src={spinner} className="spinner" alt="spinner" />}

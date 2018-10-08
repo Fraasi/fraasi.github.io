@@ -22,7 +22,7 @@ const urls = [
   'https://t00.deviantart.net/t9DK3i_iT1CpubkhxKs54wyESP8=/fit-in/700x350/filters:fixed_height(100,100):origin()/pre00/f922/th/pre/f/2009/196/2/8/bill_hicks_quick_sketch_by_doofassi.jpg',
 ]
 
-const randomUrl = Math.floor(Math.random() * (urls.length + 1))
+const randomUrl = Math.floor(Math.random() * urls.length)
 
 export default function getDAUrl() {
   return urls[randomUrl]
