@@ -1,11 +1,20 @@
 {
-  "main.css": "static/css/main.971c0609.css",
-  "main.css.map": "static/css/main.971c0609.css.map",
-  "main.js": "static/js/main.f44061be.js",
-  "main.js.map": "static/js/main.f44061be.js.map",
-  "static\\media\\BOOKOS.TTF": "static/media/BOOKOS.4267d8aa.TTF",
-  "static\\media\\black-linen.png": "static/media/black-linen.d01731ee.png",
-  "static\\media\\code.svg": "static/media/code.23a2f1cd.svg",
-  "static\\media\\spinner.svg": "static/media/spinner.d059232c.svg",
-  "static\\media\\wenzel1.ttf": "static/media/wenzel1.7fb66dd0.ttf"
+  "files": {
+    "main.css": "/static/css/main.1992260f.chunk.css",
+    "main.js": "/static/js/main.022e5dd1.chunk.js",
+    "main.js.map": "/static/js/main.022e5dd1.chunk.js.map",
+    "runtime~main.js": "/static/js/runtime~main.e828fa91.js",
+    "runtime~main.js.map": "/static/js/runtime~main.e828fa91.js.map",
+    "static/js/2.e56b99db.chunk.js": "/static/js/2.e56b99db.chunk.js",
+    "static/js/2.e56b99db.chunk.js.map": "/static/js/2.e56b99db.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.acc2f3e8095c26e529e6b2e4d9bdb32f.js": "/precache-manifest.acc2f3e8095c26e529e6b2e4d9bdb32f.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.1992260f.chunk.css.map": "/static/css/main.1992260f.chunk.css.map",
+    "static/media/readme.css": "/static/media/BOOKOS.4267d8aa.TTF",
+    "static/media/index.css": "/static/media/black-linen.d01731ee.png",
+    "static/media/code.svg": "/static/media/code.23a2f1cd.svg",
+    "static/media/spinner.svg": "/static/media/spinner.d059232c.svg",
+    "static/media/App.css": "/static/media/wenzel1.7fb66dd0.ttf"
+  }
 }
