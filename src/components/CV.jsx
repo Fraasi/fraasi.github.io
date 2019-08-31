@@ -2,19 +2,19 @@ import React from 'react';
 import '../css/cv.css'
 
 const info = {
-  mainSkills: ['Javascript', 'React', 'Node', 'Electron', 'HTML5', 'CSS3'],
-  libraries: ['Leaflet.js', 'p5.js', 'd3.js', 'Markdown.js', 'fullcalendar.js', 'node-osmosis', 'node-commander', 'node-express', 'node-mongodb'],
+  mainSkills: ['Javascript', 'Node', 'React', 'Electron', 'HTML5', 'CSS3'],
+  libraries: ['Leaflet.js', 'p5.js', 'd3.js', 'Markdown.js', 'fullcalendar.js', 'Cheeriojs', 'node-commander', 'node-express', 'node-mongodb'],
   other: ['git & github', 'npm', 'Heroku', 'Photoshop'],
   quickLinks: [
     {
       link: 'https://github.com/Fraasi/PDTapp',
       name: 'PDTapp',
-      description: '(personal desktop app, biggest project so far)',
+      description: '(personal electron desktop app)',
     },
     {
       link: 'https://github.com/Fraasi/Phyllotaxis-leaf-arrangement',
       name: 'Phyllotaxis',
-      description: '(mathematical graphics app)',
+      description: '(little mathematical graphics app)',
     },
     {
       link: 'https://github.com/Fraasi/teetoes"',
@@ -32,14 +32,14 @@ const info = {
       description: '(d3.js chart showing dates Näsijärvi lake froze & unfroze between 1975-2017)',
     },
     {
-      link: 'https://github.com/Fraasi/folder-file-names',
-      name: 'Folder file names',
-      description: '(npm package of a node command line interface)',
+      link: 'https://github.com/Fraasi/Saeae',
+      name: 'Saeae (Sää)',
+      description: '(electron desktop app to show weather temperature in the notification area/system tray)',
     },
     {
-      link: 'http://github.com/Fraasi/Leaflet-GPX-Map',
-      name: 'Leaflet gpx map',
-      description: '(leaflet map to show gpx tracks with some additional plugins, first project ever, reason why I got into coding)',
+      link: 'https://github.com/Fraasi/pispalan-tapahtumat',
+      name: 'Pispalan-tapahtumat',
+      description: '(local happenings all in one nice little pwa website)',
     },
   ],
 }
@@ -61,13 +61,13 @@ export default function CV() {
       <h3>CV</h3>
       <p>
         <b>Main skills</b><br />
-        {info.mainSkills.map(skill => (<li key={skill}>{skill}</li>))}<br />
+        {info.mainSkills.map((skill) => (<li key={skill}>{skill}</li>))}<br />
 
         <b className="b">Some libraries I&apos;ve used along the way</b><br />
-        {info.libraries.map(lib => (<li key={lib}>{lib}</li>))}<br />
+        {info.libraries.map((lib) => (<li key={lib}>{lib}</li>))}<br />
 
         <b>Other related technologies</b><br />
-        {info.other.map(other => (<li key={other}>{other}</li>))}<br />
+        {info.other.map((other) => (<li key={other}>{other}</li>))}<br />
 
         <b>Quick links to some presentable projects</b><br />
         {info.quickLinks.map(({ name, link, description }) => (
@@ -75,8 +75,7 @@ export default function CV() {
             <li><a href={link} target="_blank" rel="noopener noreferrer">{name}</a></li>
             <li>{description}</li>
           </React.Fragment>
-        ))
-        }
+        ))}
         <br />
         <b>Contact</b><br />
         <li>Fraasi.gh<span style={{ display: 'none' }}>foo</span>@gmail.com (English/Finnish)</li>

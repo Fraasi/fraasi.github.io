@@ -19,11 +19,13 @@ export default function Header(props) {
               )
             })}
           </ul>
-          <a href="https://github.com/Fraasi/">@ Github</a>
+          <a href="https://github.com/Fraasi/" target="_blank" rel="noopener noreferrer">@ Github</a>
           <br />
-          <a href="https://codepen.io/Fraasi/">@ Codepen</a>
+          <a href="https://www.npmjs.com/~fraasi" target="_blank" rel="noopener noreferrer">@ Npm</a>
           <br />
-          <a href="https://www.deviantart.com/doofassi/gallery/">@ Deviantart</a>
+          <a href="https://codepen.io/Fraasi/" target="_blank" rel="noopener noreferrer">@ Codepen</a>
+          <br />
+          <a href="https://www.deviantart.com/doofassi/gallery/" target="_blank" rel="noopener noreferrer">@ Deviantart</a>
         </div>
       </div>
       <h1 className="title" onClick={titleClick}>

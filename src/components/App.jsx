@@ -1,12 +1,11 @@
 import React, { Component } from 'react'
 import '../css/App.css'
 import '../css/dropdown.css'
-
 import { fetchRepos, getPhyllotaxisUrl, fetchQuote } from '../js/utils'
 import getDAUrl from '../js/da';
 import Readme from './Readme'
 import Header from './Header';
-import LeftSide from './left-side';
+import LeftSide from './Left-side';
 
 
 class App extends Component {

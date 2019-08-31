@@ -7,7 +7,7 @@ export function fetchRepos() {
       return response.json()
     })
     .then((json) => {
-      const repos = json.filter(repo => (!repo.name.includes('repo') && !repo.fork))
+      const repos = json.filter((repo) => (!repo.name.includes('repo') && !repo.fork))
       repos.sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
       this.setState({
         repos,
