@@ -1,38 +1,50 @@
 {
-	"name": "fraasi.github.io",
-	"version": "0.2.0",
-	"private": true,
-	"dependencies": {
-		"react": "^16.4.2",
-		"react-dom": "^16.4.2",
-		"react-scripts": "^1.1.5",
-		"showdown": "^1.8.6"
-	},
-	"scripts": {
-		"start": "react-scripts start",
-		"build": "react-scripts build",
-		"test": "react-scripts test --env=jsdom",
-		"eject": "react-scripts eject",
-		"predeploy": "set NODE_DEBUG=gh-pages",
-		"deploy": "node deploy-gh-pages.js",
-		"clean": "node node_modules/gh-pages/bin/gh-pages-clean"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/Fraasi/fraasi.github.io.git"
-	},
-	"author": "Fraasi <fraasi.gh@gmail.com>",
-	"license": "ISC",
-	"bugs": {
-		"url": "https://github.com/Fraasi/fraasi.github.io/issues"
-	},
+  "name": "fraasi.github.io",
+  "version": "0.2.5",
+  "private": true,
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "predeploy": "set NODE_DEBUG=gh-pages",
+    "deploy": "node deploy-gh-pages.js",
+    "clean": "node node_modules/gh-pages/bin/gh-pages-clean"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fraasi/fraasi.github.io.git"
+  },
+  "author": "Fraasi <fraasi.gh@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Fraasi/fraasi.github.io/issues"
+  },
 	"homepage": "https://fraasi.github.io/",
-	"devDependencies": {
-		"eslint": "^5.4.0",
-		"eslint-config-airbnb": "^17.1.0",
-		"eslint-plugin-import": "^2.14.0",
-		"eslint-plugin-jsx-a11y": "^6.1.1",
-		"eslint-plugin-react": "^7.11.1",
-		"gh-pages": "^1.2.0"
-	}
+	"dependencies": {
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-scripts": "^3.1.1",
+    "showdown": "^1.9.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.3.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.14.3",
+    "gh-pages": "^2.1.1"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
 }
