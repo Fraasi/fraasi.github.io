@@ -1,6 +1,6 @@
 @font-face {
 	font-family: 'wenzel';
-	src: url('../assets/wenzel1.ttf');
+	src: url('../../assets/wenzel1.ttf');
 }
 
 .App {

@@ -1,6 +1,6 @@
 import React from 'react'
-import '../css/left-side.css'
-import spinner from '../assets/spinner.svg'
+import './left-side.css'
+import spinner from '../../assets/spinner.svg'
 
 export default function LeftSide(props) {
   const { dailyQuote, deviantImgUrl, phyllotaxisImgUrl } = props

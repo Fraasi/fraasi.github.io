@@ -1,8 +1,8 @@
 import React from 'react'
 import showdown from 'showdown'
-import CV from './CV'
-import '../css/readme.css'
-import spinner from '../assets/spinner.svg'
+import CV from '../CV/Index'
+import './readme.css'
+import spinner from '../../assets/spinner.svg'
 
 showdown.setFlavor('github')
 const converter = new showdown.Converter()

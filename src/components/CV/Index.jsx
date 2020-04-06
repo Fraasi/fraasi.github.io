@@ -1,5 +1,5 @@
 import React from 'react';
-import '../css/cv.css'
+import './cv.css'
 
 const info = {
   mainSkills: ['Javascript', 'Node', 'React', 'Electron', 'HTML5', 'CSS3'],

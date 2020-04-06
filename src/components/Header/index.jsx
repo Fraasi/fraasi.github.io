@@ -1,7 +1,7 @@
 
 import React from 'react'
-import codePNG from '../assets/code.svg'
-import '../css/header.css'
+import codePNG from '../../assets/code.svg'
+import './header.css'
 
 export default function Header(props) {
   const { repos, handleRepoClick, titleClick } = props
