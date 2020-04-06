@@ -29,7 +29,7 @@ const info = {
     {
       link: 'https://github.com/Fraasi/nasijarven-jaat-chart',
       name: 'Näsijärven jäät chart',
-      description: '(d3.js chart showing dates Näsijärvi lake froze & unfroze between 1975-2017)',
+      description: '(d3.js chart showing dates Näsijärvi lake froze & unfroze between 1975-2019)',
     },
     {
       link: 'https://github.com/Fraasi/Saeae',

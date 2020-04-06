@@ -9,6 +9,17 @@ const converter = new showdown.Converter()
 
 export default function Readme(props) {
   const { currentRepo, loading } = props
+  if (typeof currentRepo.title === 'object') {
+    return (
+      <p>
+        Something went wrong:<br />
+        {currentRepo.title.status}<br />
+        {currentRepo.title.url}<br />
+        {currentRepo.title.statusText}<br />
+        Try github <a href={currentRepo.title.html} rel="noopener noreferrer" target="_blank">{currentRepo.title.html}</a>
+      </p>
+    )
+  }
   if (currentRepo.readme === '' && !loading) return (<CV />)
   if (loading) return <img src={spinner} className="spinner" alt="spinner" />
 

@@ -7,6 +7,12 @@
 	font-size: 15px;
 }
 
+.left.link {
+	width: 60%;
+	margin: 0 auto;
+	text-align: left;
+}
+
 .left-side a {
 	font-family: Bookman, serif;
 	font-size: 14px;
