@@ -7,9 +7,14 @@ const info = {
   other: ['git & github', 'npm', 'Heroku', 'Photoshop'],
   quickLinks: [
     {
-      link: 'https://github.com/Fraasi/PDTapp',
-      name: 'PDTapp',
-      description: '(personal electron desktop app)',
+      link: 'https://github.com/Fraasi/pispalan-tapahtumat',
+      name: 'Pispalan-tapahtumat',
+      description: '(local happenings all in one nice little pwa website)',
+    },
+    {
+      link: 'https://github.com/Fraasi/Saeae',
+      name: 'Saeae (Sää)',
+      description: '(electron desktop app to show weather temperature in the notification area/system tray)',
     },
     {
       link: 'https://github.com/Fraasi/Phyllotaxis-leaf-arrangement',
@@ -31,16 +36,11 @@ const info = {
       name: 'Näsijärven jäät chart',
       description: '(d3.js chart showing dates Näsijärvi lake froze & unfroze between 1975-2019)',
     },
-    {
-      link: 'https://github.com/Fraasi/Saeae',
-      name: 'Saeae (Sää)',
-      description: '(electron desktop app to show weather temperature in the notification area/system tray)',
-    },
-    {
-      link: 'https://github.com/Fraasi/pispalan-tapahtumat',
-      name: 'Pispalan-tapahtumat',
-      description: '(local happenings all in one nice little pwa website)',
-    },
+    // {
+    //   link: 'https://github.com/Fraasi/PDTapp',
+    //   name: 'PDTapp',
+    //   description: '(personal electron desktop app)',
+    // },
   ],
 }
 

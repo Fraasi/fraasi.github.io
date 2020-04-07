@@ -1,24 +1,18 @@
 import React, { Component } from 'react'
-import './app.css'
-import './dropdown.css'
 import { fetchRepos, getPhyllotaxisUrl, fetchQuote } from '../../js/utils'
 import getDAUrl from '../../js/da'
 import Readme from '../Readme'
 import Header from '../Header'
 import LeftSide from '../Left-side'
+import './app.css'
+import './dropdown.css'
 
-function FetchException(resp) {
-  console.log('resp:', resp)
-  this.status = resp.status
-  this.url = resp.url
-  this.statusText = resp.statusText
-  this.html_url = resp.html_url
-}
 
 class App extends Component {
   constructor() {
     super()
     this.state = {
+      error: '',
       loading: false,
       phyllotaxisImgUrl: '',
       deviantImgUrl: '',
@@ -32,8 +26,10 @@ class App extends Component {
         html_url: '',
         branch: '',
       },
-      dailyQuote: { author: '', quote: '', },
+      dailyQuote: { author: '', quote: '' },
     }
+    this.handleRepoClick = this.handleRepoClick.bind(this)
+    this.titleClick = this.titleClick.bind(this)
   }
 
   componentDidMount() {
@@ -45,23 +41,27 @@ class App extends Component {
     })
   }
 
-  handleRepoClick = (e) => {
+  handleRepoClick(e) {
     e.persist()
-    const repoName = e.target.dataset.name
     this.setState(
       {
         loading: true,
+        error: '',
         currentRepo: {
-          readme: ''
-        }
+          readme: '',
+        },
       }, () => {
-        const repo = this.state.repos.find(repo => repo.name === repoName)
+        const repoName = e.target.dataset.name
+        const repo = this.state.repos.find((repo) => repo.name === repoName)
         const branch = repo.default_branch
-        fetch(`https://raw.githubusercontent.com/Fraasi/${repoName}/${branch}/README.md`)
+        fetch(`https://raw.githubusercontent.com/Fraasi/${repoName}/${branch}/REDME.md`)
           .then((resp) => {
             if (!resp.ok) {
-              resp.html_url = repo.html_url
-              throw new FetchException(resp)
+              const error = `${resp.status} ${resp.statusText}, repository url: ${repo.html_url}`
+              this.setState({
+                error,
+              })
+              throw new Error(resp.statusText)
             }
             return resp.text()
           })
@@ -75,39 +75,50 @@ class App extends Component {
                 updated_at: repo.updated_at,
                 created_at: repo.created_at,
                 html_url: repo.html_url,
-                branch
+                branch,
               },
             })
           })
-          .catch((err) => {
+          .catch(() => {
             this.setState({
               loading: false,
               currentRepo: {
-                title: err
+                title: '',
               },
             })
           })
-      }
+      },
     )
   }
 
-  titleClick = () => {
+  titleClick() {
     this.setState({
+      error: '',
       currentRepo: {
         readme: '',
-        loading: false
-      }
+        loading: false,
+      },
     })
   }
 
   render() {
-    const { phyllotaxisImgUrl, deviantImgUrl, dailyQuote, repos, currentRepo, loading } = this.state
+    const {
+      phyllotaxisImgUrl, deviantImgUrl, dailyQuote, repos, currentRepo, loading, error,
+    } = this.state
     return (
       <div className="App">
-        <Header repos={repos} handleRepoClick={this.handleRepoClick} titleClick={this.titleClick} />
+        <Header
+          repos={repos}
+          handleRepoClick={this.handleRepoClick}
+          titleClick={this.titleClick}
+        />
         <section className="body">
-          <LeftSide deviantImgUrl={deviantImgUrl} phyllotaxisImgUrl={phyllotaxisImgUrl} dailyQuote={dailyQuote} />
-          <Readme currentRepo={currentRepo} loading={loading} />
+          <LeftSide
+            deviantImgUrl={deviantImgUrl}
+            phyllotaxisImgUrl={phyllotaxisImgUrl}
+            dailyQuote={dailyQuote}
+          />
+          <Readme currentRepo={currentRepo} loading={loading} error={error} />
         </section>
       </div>
     );

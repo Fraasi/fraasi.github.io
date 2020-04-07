@@ -1,6 +1,6 @@
 import React from 'react'
 import showdown from 'showdown'
-import CV from '../CV/Index'
+import CV from '../CV'
 import './readme.css'
 import spinner from '../../assets/spinner.svg'
 
@@ -8,15 +8,12 @@ showdown.setFlavor('github')
 const converter = new showdown.Converter()
 
 export default function Readme(props) {
-  const { currentRepo, loading } = props
-  if (typeof currentRepo.title === 'object') {
+  const { currentRepo, loading, error } = props
+  if (error) {
     return (
       <p>
         Something went wrong:<br />
-        {currentRepo.title.status}<br />
-        {currentRepo.title.url}<br />
-        {currentRepo.title.statusText}<br />
-        Try github <a href={currentRepo.title.html} rel="noopener noreferrer" target="_blank">{currentRepo.title.html}</a>
+        {error}
       </p>
     )
   }

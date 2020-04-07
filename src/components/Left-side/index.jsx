@@ -29,6 +29,7 @@ export default function LeftSide(props) {
       </div>
       <hr />
       <div className="left links">
+        {/* <strong>Fraasi</strong><br /> */}
         <a href="https://github.com/Fraasi/" target="_blank" rel="noopener noreferrer">@ Github</a>
         <br />
         <a href="https://www.npmjs.com/~fraasi" target="_blank" rel="noopener noreferrer">@ Npm</a>
