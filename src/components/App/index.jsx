@@ -5,7 +5,6 @@ import Readme from '../Readme'
 import Header from '../Header'
 import LeftSide from '../Left-side'
 import './app.css'
-import './dropdown.css'
 
 
 class App extends Component {
@@ -54,7 +53,7 @@ class App extends Component {
         const repoName = e.target.dataset.name
         const repo = this.state.repos.find((repo) => repo.name === repoName)
         const branch = repo.default_branch
-        fetch(`https://raw.githubusercontent.com/Fraasi/${repoName}/${branch}/REDME.md`)
+        fetch(`https://raw.githubusercontent.com/Fraasi/${repoName}/${branch}/README.md`)
           .then((resp) => {
             if (!resp.ok) {
               const error = `${resp.status} ${resp.statusText}, repository url: ${repo.html_url}`

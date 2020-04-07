@@ -2,6 +2,7 @@
 import React from 'react'
 import codePNG from '../../assets/code.svg'
 import './header.css'
+import './dropdown.css'
 
 export default function Header(props) {
   const { repos, handleRepoClick, titleClick } = props

@@ -7,7 +7,7 @@ Source code for master branch website.
 * [x] css background texture
 * [x] fonts
 * [x] md images link fix
-* [ ] header background color change?
+* [x] header background color change?
 * [x] text
 * [x] shadows for header bars
 * [x] loaders
