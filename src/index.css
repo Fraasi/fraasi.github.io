@@ -8,3 +8,11 @@ body {
   padding: 0;
   background-image:  url('./assets/black-linen.png'), linear-gradient(to right top, #1e1629, #301f41, #462859, #5f2f72, #7a3589);
 }
+
+.spinner {
+	position: relative;
+  width: 20%;
+	top: 10%;
+	margin: 0 auto;
+	animation: spin infinite 8s linear;
+}

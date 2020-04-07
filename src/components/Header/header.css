@@ -80,18 +80,16 @@
 }
 
 .title {
+	position: relative;
+	right: 50px;
+	width: 150px;
+	margin: 0 auto;
 	color: rgb(200, 200, 200);
 	text-align: center;
 	font-family: 'wenzel';
+	font-size: 1.4em;
 }
 
 .title:hover {
 	cursor: pointer;
-}
-
-@media screen and (min-width: 351px) {
-	.title {
-		font-size: 1.4em;
-		margin: 5px;
-	}
 }
