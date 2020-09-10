@@ -22,7 +22,7 @@ const info = {
       description: '(little mathematical graphics app)',
     },
     {
-      link: 'https://github.com/Fraasi/teetoes"',
+      link: 'https://github.com/Fraasi/teetoes',
       name: 'Teetoes',
       description: '(electron desktop text to speech app with google cloud voices)',
     },

@@ -1,5 +1,5 @@
 {
-    "extends": "airbnb",
+    "extends": "react-app",
     "env": {
         "browser": true,
         "jest": true
@@ -17,6 +17,7 @@
         "react/destructuring-assignment": 0,
         "jsx-a11y/no-noninteractive-element-interactions": 0,
         "jsx-a11y/click-events-have-key-events": 0,
-        "no-useless-escape": 0
+        "no-useless-escape": 0,
+        "no-multiple-empty-lines": "off"
     }
 }

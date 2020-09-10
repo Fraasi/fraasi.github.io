@@ -20,7 +20,7 @@ export default function Readme(props) {
   if (currentRepo.readme === '' && !loading) return (<CV />)
   if (loading) return <img src={spinner} className="spinner" alt="spinner" />
 
-  const string = currentRepo.readme.replace(/\(([\w\/-]+(.jpg|.png))\)/g, (match, $1) => `(https://raw.githubusercontent.com/Fraasi/${currentRepo.name}/${currentRepo.branch}/${$1})`)
+  const string = currentRepo.readme.replace(/\(([\w/-]+(.jpg|.png))\)/g, (match, $1) => `(https://raw.githubusercontent.com/Fraasi/${currentRepo.name}/${currentRepo.branch}/${$1})`)
 
   return (
     <div className="body-right">
