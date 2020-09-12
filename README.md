@@ -1,18 +1,10 @@
 ## fraasi.github.io
 
-Source code for master branch website.
+Source code for [https://fraasi.github.io/](https://fraasi.github.io/).  
+
+Run `npm run build` & `npm run deploy` when ready to go live with new changes.
+
 
 ### Todo
-* [ ] react spring maybe
-* [x] css background texture
-* [x] fonts
-* [x] md images link fix
-* [x] header background color change?
-* [x] text
-* [x] shadows for header bars
-* [x] loaders
-* [ ] footer, similar to header?
-
-
-	
-	
+* [ ] Some animations, react spring maybe?
+* [ ] Footer, similar to header?
