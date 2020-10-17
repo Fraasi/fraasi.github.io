@@ -1,23 +1,32 @@
-
 ### Table of contents
+
 <!-- toc -->
 
 - [Git](#git)
 - [Bash](#bash)
+- [JS one-liners](#js-one-liners)
 
 <!-- tocstop -->
 
 ## Git
 
-get some overview of changes
-```
-$ git log --stat --summary || git log -p
+Get some overview of changes
+```sh
+$ git log --stat --summary
+$ git log -p
+
+# Lists version history for a file, including renames
+$ git log --follow [file]
+
+# Outputs metadata and content changes of the specified commit
+$ git show [commit]
+
 ```
 ---
 You could use `git add -p` instead, which will give you chance to review all of the introduced changes one by one, and decide whether to include them in the commit or not.
 
 ---
-```
+```s
 $ git fetch upstream
 $ git rebase -i upstream/master
 
@@ -67,32 +76,51 @@ Delete branch locally and on the origin remote.
 
 ---
 Show the diffstat of everything you haven't pushed yet.
-```
+```sh
 branch=$(git rev-parse --abbrev-ref HEAD)
 count=$(git rev-list --count HEAD origin/$branch...HEAD)
 
 git diff --stat origin/$branch..HEAD
 echo " $count commits total"
 ```
----
-Lists version history for a file, including renames
-`$ git log --follow [file]`
 
-Shows content differences between two branches
-`$ git diff [first-branch]...[second-branch]`
-
-Outputs metadata and content changes of the specified commit
-`$ git show [commit]`
-
----
 ## Bash
 
 \* See also [The art of command line](https://github.com/jlevy/the-art-of-command-line)
+\* [My dotfiles](https://github.com/fraasi/dotfiles)
 
+---
 -In Bash scripts, subshells (written with parentheses) are convenient ways to group commands. A common example is to temporarily move to a different working directory, e.g.
-```
+```s
 # do something in current dir
 (cd /some/other/dir && other-command)
 # continue in original dir
 ```
 ---
+## JS one-liners
+
+```js
+// It's the JS version of the sleep commands
+const sleep = (ms) => (new Promise(resolve => setTimeout(resolve, ms)));
+await sleep(2000); 
+
+// Mini jQuery.
+const $ = document.querySelector.bind(document);
+
+// Shuffle an array.
+const shuffle = n => n.sort(() => 0.5 - Math.random());
+
+//Initializes a 2D array of given width and height and value.
+const initialize2DArray = (w, h, val = null) =>
+  Array.from({ length: h }).map(() => Array.from({ length: w }).fill(val));
+```
+---
+```js
+let isRequired = () => {
+ throw new Error('This is a mandatory parameter.');
+}
+let greetings = (name=isRequired(), message='Hello,') => {
+    return `${message} ${name}`;
+}
+console.log(greetings());
+```
