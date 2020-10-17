@@ -5,7 +5,7 @@
 
 .App {
 	display: grid;
-	max-width: 700px;
+	max-width: 850px;
 	margin: 20px auto;
 	grid-gap: 10px 0px; /* old 10px 20px; */
 	grid-template-columns: 50px 1fr 50px;
@@ -14,7 +14,7 @@
 .body {
 	grid-column: 2 / -2;
 	display: grid;
-	grid-template-columns: 7fr 13fr;
+	grid-template-columns: 6fr 14fr;
 	grid-template-rows: minmax(150px, 1fr);
 	grid-gap: 10px;
 	border: 2px solid black;

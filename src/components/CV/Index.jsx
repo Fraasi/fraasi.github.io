@@ -4,7 +4,7 @@ import './cv.css'
 const info = {
   mainSkills: ['Javascript', 'Node', 'React', 'Electron', 'HTML5', 'CSS3'],
   libraries: ['Leaflet.js', 'p5.js', 'd3.js', 'Markdown.js', 'fullcalendar.js', 'Cheeriojs', 'node-commander', 'node-express', 'node-mongodb'],
-  other: ['git & github', 'npm', 'Heroku', 'Photoshop'],
+  other: ['git & github', 'npm', 'bash scripting', 'google analytics', 'Heroku', 'Photoshop'],
   quickLinks: [
     {
       link: 'https://github.com/Fraasi/pispalan-tapahtumat',
