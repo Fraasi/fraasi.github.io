@@ -36,7 +36,7 @@ export function fetchQuote() {
     })
   }
 
-  fetch('https://cors-anywhere.herokuapp.com/https://ms-rq-api.herokuapp.com/')
+  fetch('https://corsanywhere.herokuapp.com/https://ms-rq-api.herokuapp.com/')
     .then((data) => {
       if (data.status !== 200) {
         setTimeout(timeoutQuote.bind(this), 40000)
