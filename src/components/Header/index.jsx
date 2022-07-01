@@ -1,6 +1,6 @@
 
 import React from 'react'
-import codePNG from '../../assets/code.svg'
+import codeImg from '../../assets/code.svg'
 import './header.css'
 import './dropdown.css'
 
@@ -8,7 +8,7 @@ export default function Header(props) {
   const { repos, handleRepoClick, titleClick } = props
   return (
     <header className="header">
-      <img src={codePNG} className="code-logo" alt="code-logo" />
+      <img src={codeImg} className="code-logo" alt="code-logo" />
       <div className="dropdown">
         <button type="button" className="dropbutton">Repositories</button>
         <div className="dropdown-content">
