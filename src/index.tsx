@@ -2,28 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './components/App/index';
-import Tips from './Tips/index';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-} from "react-router-dom";
+
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <Router>
-      <Switch>
-        <Route exact path="/">
-          <App />
-        </Route>
-        <Route path="/tips">
-          <Tips />
-        </Route>
-      </Switch>
-    </Router>
+    <App />
   </React.StrictMode>
 );
 
