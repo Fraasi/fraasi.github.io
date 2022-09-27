@@ -36,7 +36,7 @@ export function fetchQuote() {
     })
   }
 
-  fetch('https://corsanywhere.herokuapp.com/https://ms-rq-api.herokuapp.com/')
+  fetch('https://fra-rq.onrender.com/')
     .then((data) => {
       if (data.status !== 200) {
         setTimeout(timeoutQuote.bind(this), 40000)
@@ -45,11 +45,10 @@ export function fetchQuote() {
       return data.json()
     })
     .then((json) => {
-      const author = Object.keys(json)[0]
       this.setState({
         dailyQuote: {
-          quote: json.statusText || json[author],
-          author: json.status || author,
+          quote: json.statusText || json.quote,
+          author: json.status || json.author,
         },
       })
     })
@@ -58,7 +57,7 @@ export function fetchQuote() {
       this.setState({
         dailyQuote: {
           quote: `${err}`,
-          author: 'ms-rq-api',
+          author: '',
         },
       })
       setTimeout(timeoutQuote.bind(this), 40000)
