@@ -36,7 +36,7 @@ export function fetchQuote() {
     })
   }
 
-  fetch('https://fra-rq.onrender.com/')
+  fetch('https://rq.up.railway.app')
     .then((data) => {
       if (data.status !== 200) {
         setTimeout(timeoutQuote.bind(this), 40000)
