@@ -14,7 +14,7 @@ const info = {
     {
       link: 'https://github.com/Fraasi/Saeae',
       name: 'Saeae (Sää)',
-      description: '(electron desktop app to show weather temperature in the notification area/system tray)',
+      description: '(electron desktop app to show weather and moon information in the notification area/system tray)',
     },
     {
       link: 'https://github.com/Fraasi/Phyllotaxis-leaf-arrangement',
@@ -44,7 +44,7 @@ const info = {
   ],
 }
 
-export default function CV() {
+export default function CV(): JSX.Element {
   return (
     <div className="body-right">
       <h3>About Fra A.S I
